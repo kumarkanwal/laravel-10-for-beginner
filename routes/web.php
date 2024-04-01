@@ -10,14 +10,14 @@ use Illuminate\Support\Facades\DB;
 // });
 
 Route::get('/', function () {
-    // return view('dashboard');
+    return view('welcome');
 
     // $users = DB::select("select * from users ");
     // $users = DB::insert("insert into users (username, email,password) values(?,?,?)" , ["vishal","vishal@gmail.com","vishalishere"]);
     // $users = DB::update("update users set email = ? where id = ?", ["vishal9034@gmail.com", 2]);
     // $users = DB::delete("delete from users where id = ?",[2]);
 
-    // $users = DB::table('users')->get();
+    $users = DB::table('users')->get(); 
     // $users = DB::table('users')->where("id", 1)->get();
     // $users = DB::table('users')->insert([
     //     'username' => 'vishal',
@@ -40,12 +40,12 @@ Route::get('/', function () {
     //     'email' => 'vvishal903@gmail.com',
     //     'password' => 'vvelo903'
     //    ]); 
-    $user = User::create([
-        'name' => 'Sarthak',
-        'email'=> 'sarthak4@gmail.com',
-        'password'=> bcrypt('kanwal1123')
-    ]);
-    dd($user);
+    // $user = User::create([
+    //     'name' => 'watermelon12312asd3',
+    //     'email'=> 'watermelon123asd@gmail.com',
+    //     'password'=> 'watermelonasd132'
+    // ]);
+    // dd($user->name);
 
    
 })->middleware(['auth', 'verified'])->name('dashboard');
